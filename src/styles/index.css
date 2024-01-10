@@ -1,12 +1,184 @@
+:root {
+	--color-bg: ##1e1e1e;
+	--color-border-task: #4a494995;
+	--color-text: #ffffffe0;
+	--color-placeholder: #;
 
-/* 
+	--color-surface-mixed-100: #202346;
+	--color-surface-mixed-200: #373759;
+	--color-surface-mixed-300: #48486a;
+	--color-surface-mixed-400: #65647f;
+	--color-surface-mixed-500: #7d7c94;
+	--color-surface-mixed-600: #9695a8;
+	--color-primary-600: #b6b6db;
+	--color-primary-500: #9a9ad7;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+* {
+	box-sizing: border-box;
+	/* font-family: "Poppins", sans-serif; */
+	font-weight: 100;
+	padding: 0;
+	margin: 0;
+}
 
-*/
+/* li {
+	text-decoration: none;
+
+} */
+
+body {
+	font-family: "Poppins", sans-serif;
+
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--color-surface-mixed-100);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.container {
+	width: 500px;
+	height: auto;
+	padding: 0;
+	background: var(--color-surface-mixed-300);
+	border-radius: 0.5rem;
+	box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	font-family: "Quicksand", sans-serif;
+	color: var(--color-primary-500);
+	display: flex;
+	gap: 10px;
+}
+
+.form__container {
+	padding: 1rem;
+	background-color: var(--color-surface-mixed-200);
+	/* border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem; */
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+	box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.1);
+	transition: all 300ms ease;
+}
+
+.form__container input {
+	border: none;
+	width: 100%;
+	background-color: transparent;
+	outline: none;
+	color: var(--color-text);
+	font-weight: 300;
+}
+
+.form__container:focus-within {
+	/* EFECTOS AL CLICAR EL INPUT */
+	box-shadow: 0 10px 15px -1px rgba(0, 0, 0, 0.3);
+}
+
+input::placeholder {
+	color: var(--color-placeholder);
+	font-weight: 300;
+	opacity: 0.6;
+	/* padding-left: 1rem; */
+}
+
+input:focus::placeholder {
+	opacity: 0;
+}
+
+.task__container {
+	height: 3rem;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--color-surface-mixed-400);
+	align-items: center;
+	padding: 1rem;
+	margin: 0;
+}
+
+.task__container:last-child {
+	border: none;
+}
+
+.task__container p {
+	font-weight: 300;
+	color: var(--color-text);
+}
+
+.icon {
+	color: var(--color-primary-500);
+	display: none;
+	font-size: 1.3rem;
+	margin: 0;
+	padding: 0;
+}
+
+.task__container:hover:first-child {
+	background-color: var(--color-surface-mixed-400);
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+}
+
+.task__container:hover {
+	background-color: var(--color-surface-mixed-400);
+}
+
+.task__container:hover:last-child {
+	background-color: var(--color-surface-mixed-400);
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+.task__container:hover .icon {
+	display: block;
+}
+
+.icon:hover {
+	color: var(--color-primary-600);
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	color: var(--color-primary-500);
+	font-weight: 500;
+}
+
+.stats__container {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 1rem;
+	justify-content: space-between;
+}
+.stats__container p {
+	font-weight: 200;
+	color: var(--color-text);
+	opacity: 0.8;
+}
+
+.test {
+	color: red;
+}
+
+.task__sort {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.task__sort button:hover {
+	color: var(--color-primary-600);
+}
