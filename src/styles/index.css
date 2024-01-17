@@ -182,3 +182,7 @@ button {
 .task__sort button:hover {
 	color: var(--color-primary-600);
 }
+
+li {
+	color: white;
+}
