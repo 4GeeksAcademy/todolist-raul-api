@@ -44,15 +44,23 @@ const Home = () => {
 	}, []);
 
 	function sortByNewest() {
-		let sortedItems = task.slice().sort((a, b) => b.t - a.t);
+		let sortedItems = [...task].sort((a, b) => {
+			if (a.label > b.label) return 1;
+			return -1;
+		});
 		console.log(sortedItems);
+		console.log(task);
 		setTask(sortedItems);
 	}
 
 	function sortByOldest() {
-		let sortedItems = task.slice().sort((a, b) => a.t - b.t);
+		let sortedItems = [...task].sort((a, b) => {
+			if (a.label > b.label) return -1;
+			return 1;
+		});
 		console.log(sortedItems);
 		setTask(sortedItems);
+		console.log(task);
 	}
 
 	function handleAddItem(newTask) {
@@ -204,10 +212,10 @@ function Stats({ numTask, sortByNewest, sortByOldest }) {
 			{numTask !== 0 ? (
 				<div className="task__sort">
 					<button onClick={sortByNewest}>
-						<i class="fa-solid fa-arrow-up"></i>
+						<i className="fa-solid fa-arrow-up"></i>
 					</button>
 					<button onClick={sortByOldest}>
-						<i class="fa-solid fa-arrow-down"></i>
+						<i className="fa-solid fa-arrow-down"></i>
 					</button>
 				</div>
 			) : (
